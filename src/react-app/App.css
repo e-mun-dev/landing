@@ -5,12 +5,11 @@
 }
 
 .section {
-	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: var(--space-3xl) var(--space-lg);
+	padding: var(--space-2xl) var(--space-lg);
 	position: relative;
 }
 
@@ -21,6 +20,7 @@
 
 /* Hero Section */
 .hero {
+	min-height: 100vh;
 	text-align: center;
 	position: relative;
 	overflow: hidden;
@@ -99,7 +99,7 @@
 /* Content Sections */
 .content-section {
 	min-height: auto;
-	padding: var(--space-4xl) var(--space-lg);
+	padding: var(--space-3xl) var(--space-lg);
 }
 
 .section-label {
@@ -131,7 +131,7 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	gap: var(--space-md);
-	margin-top: var(--space-2xl);
+	margin-top: var(--space-lg);
 }
 
 .card {
@@ -200,7 +200,7 @@
 	gap: var(--space-md);
 	flex-wrap: wrap;
 	justify-content: center;
-	margin-top: var(--space-2xl);
+	margin-top: var(--space-lg);
 }
 
 .entry-link {
@@ -230,7 +230,7 @@
 
 /* Footer */
 .footer {
-	padding: var(--space-2xl) var(--space-lg);
+	padding: var(--space-xl) var(--space-lg);
 	text-align: center;
 	color: var(--color-text-tertiary);
 	font-size: 0.875rem;
@@ -288,11 +288,11 @@
 /* Responsive */
 @media (max-width: 768px) {
 	.section {
-		padding: var(--space-2xl) var(--space-md);
+		padding: var(--space-xl) var(--space-md);
 	}
 
 	.content-section {
-		padding: var(--space-3xl) var(--space-md);
+		padding: var(--space-2xl) var(--space-md);
 	}
 
 	.cards {
