@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
+import Privacy from "./Privacy";
 import "./App.css";
 
-function App() {
+function Landing() {
 	const revealRefs = useRef<HTMLElement[]>([]);
 
 	useEffect(() => {
@@ -202,9 +203,22 @@ function App() {
 			{/* Footer */}
 			<footer className="footer">
 				<p>&copy; e-mun</p>
+				<a href="/privacy">개인정보처리방침</a>
 			</footer>
 		</div>
 	);
+}
+
+/**
+ * 경로 분기. wrangler.json 의 not_found_handling 이 single-page-application 이라
+ * 모든 경로가 index.html 로 오므로 여기서 가른다. 라우터를 넣지 않는다 —
+ * 페이지가 둘뿐이고, 늘어나면 그때 react-router 를 붙인다.
+ */
+function App() {
+	if (window.location.pathname.replace(/\/+$/, "") === "/privacy") {
+		return <Privacy />;
+	}
+	return <Landing />;
 }
 
 export default App;
