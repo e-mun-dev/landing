@@ -4,6 +4,10 @@
 	"main": "./src/worker/index.ts",
 	"compatibility_date": "2025-10-08",
 	"compatibility_flags": ["nodejs_compat"],
+	"routes": [
+		{ "pattern": "e-mun.com", "custom_domain": true },
+		{ "pattern": "www.e-mun.com", "custom_domain": true }
+	],
 	"observability": {
 		"enabled": true
 	},
