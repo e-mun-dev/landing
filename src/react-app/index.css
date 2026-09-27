@@ -1,22 +1,65 @@
 :root {
-	/* Colors */
-	--color-bg: #0a0a0b;
-	--color-bg-elevated: #111113;
-	--color-surface: rgba(255, 255, 255, 0.03);
-	--color-border: rgba(255, 255, 255, 0.08);
-	--color-border-hover: rgba(255, 255, 255, 0.12);
+	/* ── Primitive ──────────────────────────────────────────────
+	   common/designs/admin.md 의 Neutral / Blue 원시값.
+	   여기 값만 교체하면 아래 Alias 전체가 따라온다. */
+	--neutral-0: #ffffff;
+	--neutral-100: #f4f5f6;
+	--neutral-200: #e4e5e9;
+	--neutral-300: #d1d4d9;
+	--neutral-400: #babcc1;
+	--neutral-500: #999ca0;
+	--neutral-700: #5c5c62;
+	--neutral-800: #47484c;
+	--neutral-900: #36363c;
+	--neutral-1000: #212328;
+	--neutral-1100: #181820;
 
-	--color-text-primary: rgba(255, 255, 255, 0.92);
-	--color-text-secondary: rgba(255, 255, 255, 0.60);
-	--color-text-tertiary: rgba(255, 255, 255, 0.40);
+	--blue-400: #6d87e7;
+	--blue-500: #486ae2;
+	--blue-700: #223fa8;
+	--blue-800: #1b2e72;
 
-	--color-accent: #6366f1;
-	--color-accent-light: #818cf8;
-	--color-accent-glow: rgba(99, 102, 241, 0.4);
+	--logo-1: #fe6b01;
+	--logo-2: #f98419;
+	--secondary-1: #416bd5;
+	--secondary-2: #6c89f2;
 
-	/* Typography */
-	--font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-	--font-mono: "SF Mono", "Fira Code", "Fira Mono", monospace;
+	/* ── Alias (Dark) ───────────────────────────────────────────
+	   랜딩은 다크 단일 모드다. admin.md 11장 Dark 매핑을 따른다. */
+	--color-bg: var(--neutral-1100);
+	--color-bg-elevated: var(--neutral-1000);
+	--color-surface: rgba(244, 245, 246, 0.03);
+	--color-border: rgba(244, 245, 246, 0.08);
+	--color-border-hover: rgba(244, 245, 246, 0.14);
+
+	--color-text-primary: var(--neutral-100);
+	--color-text-secondary: var(--neutral-300);
+	--color-text-tertiary: var(--neutral-500);
+
+	/* 강조는 로고 컬러. 상호작용(링크·포커스)은 Secondary. */
+	--color-accent: var(--logo-1);
+	--color-accent-light: var(--logo-2);
+	--color-accent-glow: rgba(254, 107, 1, 0.35);
+	--color-interactive: var(--secondary-2);
+	--color-interactive-strong: var(--secondary-1);
+
+	/* ── Typography ─────────────────────────────────────────────
+	   기본 서체는 Noto Sans KR. 공통 letter-spacing -2%. */
+	--font-sans: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+		"Malgun Gothic", sans-serif;
+	--font-mono: "SF Mono", "Fira Code", monospace;
+	--tracking: -0.02em;
+
+	/* 사이즈 스케일 — admin.md Type Style */
+	--text-title-xxl: 1.75rem; /* 28 */
+	--text-title-xl: 1.5rem; /* 24 */
+	--text-title-lg: 1.25rem; /* 20 */
+	--text-title-md: 1.125rem; /* 18 */
+	--text-title-sm: 1rem; /* 16 */
+	--text-body-lg: 1rem; /* 16 */
+	--text-body-md: 0.875rem; /* 14 */
+	--text-body-sm: 0.8125rem; /* 13 */
+	--text-label: 0.75rem; /* 12 */
 
 	/* Spacing */
 	--space-xs: 0.5rem;
@@ -37,6 +80,10 @@
 	/* Layout */
 	--max-width: 1200px;
 	--content-width: 800px;
+
+	--radius-sm: 4px;
+	--radius-md: 8px;
+	--radius-lg: 12px;
 }
 
 *,
@@ -59,6 +106,7 @@ body {
 	background-color: var(--color-bg);
 	color: var(--color-text-primary);
 	line-height: 1.6;
+	letter-spacing: var(--tracking);
 	min-height: 100vh;
 	overflow-x: hidden;
 }
@@ -74,7 +122,12 @@ a {
 }
 
 a:hover {
-	color: var(--color-accent-light);
+	color: var(--color-interactive);
+}
+
+:focus-visible {
+	outline: 2px solid var(--color-interactive);
+	outline-offset: 2px;
 }
 
 button {
@@ -86,10 +139,9 @@ button {
 
 ::selection {
 	background: var(--color-accent);
-	color: white;
+	color: var(--neutral-0);
 }
 
-/* Utility classes */
 .sr-only {
 	position: absolute;
 	width: 1px;
@@ -100,4 +152,17 @@ button {
 	clip: rect(0, 0, 0, 0);
 	white-space: nowrap;
 	border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
 }
