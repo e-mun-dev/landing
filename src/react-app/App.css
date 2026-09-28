@@ -1,19 +1,8 @@
 /* 랜딩 전용 팔레트. index.css 의 다크 토큰은 /privacy 가 쓰므로 건드리지 않고,
    여기서 .landing 스코프로만 덮어쓴다. */
 .landing {
-	--paper: #f4f0e8;
-	--ink: #171717;
-	--muted: #77736c;
-	--line: rgba(23, 23, 23, 0.16);
-	--lime: #d8f36a;
-	--coral: #ff765f;
-	--blue: #a9dcff;
-	--cream: #fffaf0;
-	--purple: #cfc4ff;
-
 	min-height: 100vh;
 	background: var(--paper);
-	font-family: "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
 	color: var(--ink);
 	letter-spacing: normal;
 	line-height: normal;
@@ -24,11 +13,6 @@
 	--coral: #ff5e9c;
 	--blue: #a7f1d0;
 	--purple: #cdb2ff;
-}
-
-/* 오버스크롤 영역까지 페이퍼톤으로. */
-body:has(.landing) {
-	background: #f4f0e8;
 }
 
 .page {

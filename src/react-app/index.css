@@ -1,52 +1,40 @@
 :root {
 	/* ── Primitive ──────────────────────────────────────────────
-	   common/designs/admin.md 의 Neutral / Blue 원시값.
-	   여기 값만 교체하면 아래 Alias 전체가 따라온다. */
-	--neutral-0: #ffffff;
-	--neutral-100: #f4f5f6;
-	--neutral-200: #e4e5e9;
-	--neutral-300: #d1d4d9;
-	--neutral-400: #babcc1;
-	--neutral-500: #999ca0;
-	--neutral-700: #5c5c62;
-	--neutral-800: #47484c;
-	--neutral-900: #36363c;
-	--neutral-1000: #212328;
-	--neutral-1100: #181820;
+	   랜딩 팔레트. 여기 값만 교체하면 랜딩과 문서 페이지가 같이 따라온다.
+	   admin.md 의 다크 토큰은 더 이상 쓰지 않는다 — 랜딩이 페이퍼톤이다. */
+	--paper: #f4f0e8;
+	--cream: #fffaf0;
+	--ink: #171717;
+	--muted: #77736c;
+	--line: rgba(23, 23, 23, 0.16);
 
-	--blue-400: #6d87e7;
-	--blue-500: #486ae2;
-	--blue-700: #223fa8;
-	--blue-800: #1b2e72;
+	--lime: #d8f36a;
+	--coral: #ff765f;
+	--blue: #a9dcff;
+	--purple: #cfc4ff;
 
-	--logo-1: #fe6b01;
-	--logo-2: #f98419;
-	--secondary-1: #416bd5;
-	--secondary-2: #6c89f2;
+	/* ── Alias ──────────────────────────────────────────────────
+	   문서 페이지(/privacy)가 쓰는 이름. 랜딩은 원시값을 직접 쓴다. */
+	--color-bg: var(--paper);
+	--color-bg-elevated: var(--cream);
+	--color-surface: rgba(23, 23, 23, 0.03);
+	--color-border: var(--line);
+	--color-border-hover: rgba(23, 23, 23, 0.28);
 
-	/* ── Alias (Dark) ───────────────────────────────────────────
-	   랜딩은 다크 단일 모드다. admin.md 11장 Dark 매핑을 따른다. */
-	--color-bg: var(--neutral-1100);
-	--color-bg-elevated: var(--neutral-1000);
-	--color-surface: rgba(244, 245, 246, 0.03);
-	--color-border: rgba(244, 245, 246, 0.08);
-	--color-border-hover: rgba(244, 245, 246, 0.14);
+	--color-text-primary: var(--ink);
+	--color-text-secondary: #67625b;
+	--color-text-tertiary: var(--muted);
 
-	--color-text-primary: var(--neutral-100);
-	--color-text-secondary: var(--neutral-300);
-	--color-text-tertiary: var(--neutral-500);
-
-	/* 강조는 로고 컬러. 상호작용(링크·포커스)은 Secondary. */
-	--color-accent: var(--logo-1);
-	--color-accent-light: var(--logo-2);
-	--color-accent-glow: rgba(254, 107, 1, 0.35);
-	--color-interactive: var(--secondary-2);
-	--color-interactive-strong: var(--secondary-1);
+	--color-accent: var(--coral);
+	--color-accent-light: #ff9382;
+	--color-accent-glow: rgba(255, 118, 95, 0.3);
+	--color-interactive: var(--coral);
+	--color-interactive-strong: #e85942;
 
 	/* ── Typography ─────────────────────────────────────────────
 	   기본 서체는 Noto Sans KR. 공통 letter-spacing -2%. */
-	--font-sans: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-		"Malgun Gothic", sans-serif;
+	--font-sans: "Apple SD Gothic Neo", "Noto Sans KR", -apple-system,
+		BlinkMacSystemFont, "Malgun Gothic", sans-serif;
 	--font-mono: "SF Mono", "Fira Code", monospace;
 	--tracking: -0.02em;
 
@@ -139,7 +127,7 @@ button {
 
 ::selection {
 	background: var(--color-accent);
-	color: var(--neutral-0);
+	color: var(--paper);
 }
 
 .sr-only {

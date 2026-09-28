@@ -105,18 +105,23 @@ apex(`e-mun.com`)가 필요한 이유는 소셜 로그인 심사다. 네이버�
 
 ## 디자인
 
-색과 서체는 [`../common/designs/admin.md`](../common/designs/admin.md)의 토큰을 따른다. 레이아웃은 따르지 않는다 — 그 문서는 1920 기준 데스크톱 콘솔 스펙이라 랜딩에 맞지 않는다.
+페이퍼톤 단일 모드다. [`../common/designs/admin.md`](../common/designs/admin.md)의 다크 토큰은 더 이상 따르지 않는다 — 그 문서는 데스크톱 콘솔 스펙이고 랜딩은 성격이 다르다.
 
-`index.css`가 **Primitive → Alias** 2단 구조다. `admin.md`와 같은 구조라 원시값(`--neutral-*`, `--blue-*`, `--logo-*`)만 교체하면 전체가 따라온다.
+`index.css`의 `:root`가 **Primitive → Alias** 2단 구조다. 원시값만 교체하면 랜딩과 `/privacy`가 같이 따라온다.
 
-| 역할 | 토큰 |
-|---|---|
-| 배경 | `--color-bg` ← Neutral-1100 |
-| 본문 | `--color-text-primary` ← Neutral-100 |
-| 강조 | `--color-accent` ← logo-1 (오렌지) |
-| 상호작용 | `--color-interactive` ← Secondary-2 (블루) |
+| 역할 | 토큰 | 값 |
+|---|---|---|
+| 배경 | `--paper` | `#f4f0e8` |
+| 카드 배경 | `--cream` | `#fffaf0` |
+| 본문 | `--ink` | `#171717` |
+| 보조 텍스트 | `--muted` | `#77736c` |
+| 구분선 | `--line` | `rgba(23,23,23,.16)` |
+| 강조 | `--coral` | `#ff765f` |
+| 포인트 | `--lime` `--blue` `--purple` | 카드 배경용 |
 
-컴포넌트에서 원시값을 직접 쓰지 않는다. Alias만 쓴다 — 그래야 브랜드 색이 바뀔 때 한 곳만 고친다.
+랜딩(`App.css`)은 원시값을 직접 쓰고, 문서 페이지(`Privacy.css`)는 Alias(`--color-bg`, `--color-text-primary` 등)만 쓴다. 성격이 다른 두 레이아웃이라 갈라 뒀고, 색은 한 곳에서 나온다.
+
+헤더의 `✦` 버튼이 `.landing` 에 `is-electric` 을 붙여 포인트 색 네 개를 바꾼다. 장난 요소라 저장하지 않는다 — 새로고침하면 원래 색이다.
 
 ## 개인정보처리방침에 채워야 할 것
 
