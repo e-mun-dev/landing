@@ -8,11 +8,10 @@ const OPERATOR = {
 	name: "e-mun",
 	ceo: "신강식",
 	businessNumber: "237-19-02733",
-	address: "TODO: 사업장 주소",
+	address: "서울특별시 노원구",
 	email: "support@e-mun.com",
 	officer: "손예선",
-	officerRole: "TODO: 직책",
-	effectiveDate: "TODO: 시행일 (예: 2026년 10월 1일)",
+	effectiveDate: "2026년 9월 28일",
 };
 
 function Privacy() {
@@ -176,7 +175,7 @@ function Privacy() {
 							<tr>
 								<td>Cloudflare, Inc.</td>
 								<td>네트워크 전송, 접근 보호</td>
-								<td>TODO: 확인 후 기재</td>
+								<td>미국 등 Cloudflare 글로벌 엣지 네트워크</td>
 							</tr>
 							<tr>
 								<td>Oracle Corporation</td>
@@ -185,10 +184,41 @@ function Privacy() {
 							</tr>
 						</tbody>
 					</table>
-					<p className="doc-note">
-						국외 이전에 해당하는 경우 이전되는 항목, 국가, 시기와 방법, 수탁자, 보유
-						기간을 이 항목에 명시해야 합니다. 실제 사용 리전을 확인해 채워야 합니다.
+					<h3>가. 개인정보의 국외 이전</h3>
+					<p>
+						Cloudflare 는 전 세계에 분산된 엣지 네트워크에서 트래픽을 처리하므로,
+						네트워크 상황에 따라 국내가 아닌 지점을 경유할 수 있습니다. 이에 해당하는
+						내용을 아래와 같이 알려드립니다. Oracle 의 서버 호스팅은 국내(춘천
+						리전)에서만 이루어지며 국외 이전에 해당하지 않습니다.
 					</p>
+					<table className="doc-table">
+						<tbody>
+							<tr>
+								<th>이전되는 항목</th>
+								<td>접속 IP 주소, 요청 헤더 등 전송 과정에서 발생하는 정보</td>
+							</tr>
+							<tr>
+								<th>이전 국가</th>
+								<td>미국 등 Cloudflare 엣지 네트워크 소재 국가</td>
+							</tr>
+							<tr>
+								<th>이전 시기와 방법</th>
+								<td>서비스 이용 시 네트워크 전송 과정에서 자동으로 전송</td>
+							</tr>
+							<tr>
+								<th>이전받는 자</th>
+								<td>Cloudflare, Inc.</td>
+							</tr>
+							<tr>
+								<th>이용 목적</th>
+								<td>네트워크 전송, 접근 보호</td>
+							</tr>
+							<tr>
+								<th>보유 기간</th>
+								<td>위탁 계약 종료 시까지</td>
+							</tr>
+						</tbody>
+					</table>
 					<p>
 						소셜 로그인 제공자(Google, Kakao, Naver 등)는 수탁자가 아니며, 이용자가
 						직접 동의한 범위에서 정보를 전달합니다. 각 제공자의 개인정보 처리는 해당
@@ -254,9 +284,7 @@ function Privacy() {
 						<tbody>
 							<tr>
 								<th>책임자</th>
-								<td>
-									{OPERATOR.officer} ({OPERATOR.officerRole})
-								</td>
+								<td>{OPERATOR.officer}</td>
 							</tr>
 							<tr>
 								<th>문의</th>
