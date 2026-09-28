@@ -5,12 +5,12 @@ import "./Privacy.css";
  * TODO 가 남아 있으면 공개 전에 채운다 — 법정 기재 사항이다.
  */
 const OPERATOR = {
-	name: "TODO: 상호",
-	ceo: "TODO: 대표자명",
-	businessNumber: "TODO: 사업자등록번호",
+	name: "e-mun",
+	ceo: "신강식",
+	businessNumber: "237-19-02733",
 	address: "TODO: 사업장 주소",
 	email: "support@e-mun.com",
-	officer: "TODO: 개인정보 보호책임자 이름",
+	officer: "손예선",
 	officerRole: "TODO: 직책",
 	effectiveDate: "TODO: 시행일 (예: 2026년 10월 1일)",
 };
@@ -181,7 +181,7 @@ function Privacy() {
 							<tr>
 								<td>Oracle Corporation</td>
 								<td>서버 호스팅, 데이터 보관</td>
-								<td>TODO: 사용 리전 기재</td>
+								<td>대한민국 (춘천 리전)</td>
 							</tr>
 						</tbody>
 					</table>
