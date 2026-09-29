@@ -45,9 +45,10 @@ function Landing() {
 						<img className="brand-mark" src="/favicon.png" alt="" />e-mun
 					</a>
 					<nav className="landing-nav" aria-label="main navigation">
-						<a href="#works">what we make</a>
 						<a href="#thinking">how we think</a>
+						<a href="#works">what we make</a>
 						<a href="#process">process</a>
+						<a href="#contact">contact us</a>
 					</nav>
 					<div className="nav-right">
 						<button
@@ -226,7 +227,7 @@ function Landing() {
 						</div>
 					</section>
 
-					<section className="content-section reveal">
+					<section className="content-section reveal" id="process">
 						<div className="section-head">
 							<div>
 								<span className="eyebrow">what we are good at</span>
@@ -269,7 +270,7 @@ function Landing() {
 						</div>
 					</section>
 
-					<section className="content-section reveal" id="process">
+					<section className="content-section reveal">
 						<div className="section-head">
 							<div>
 								<span className="eyebrow">our way of working</span>
@@ -333,9 +334,10 @@ function Landing() {
 						<span>small studio, curious minds.</span>
 					</div>
 					<nav className="landing-nav">
-						<a href="#works">what we make</a>
 						<a href="#thinking">how we think</a>
-						<a href="#contact">contact</a>
+						<a href="#works">what we make</a>
+						<a href="#process">process</a>
+						<a href="#contact">contact us</a>
 						<a href="/privacy">개인정보처리방침</a>
 					</nav>
 					<span>© e-mun 2026</span>
