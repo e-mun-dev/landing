@@ -4,7 +4,8 @@ import "./App.css";
 
 const PRODUCTS = [
 	{ label: "LANDING", href: "/" },
-	{ label: "QUIZ", href: "https://quiz.e-mun.com" },
+	{ label: "MUNMOOD", href: "https://munmood.e-mun.com" },
+	{ label: "MUNLANG", href: "https://english.e-mun.com" },
 ];
 
 /** marquee 가 -50% 로 도니 목록을 두 벌 깔아야 이어진다. 한 벌이 화면보다
