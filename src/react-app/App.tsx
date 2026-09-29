@@ -42,7 +42,7 @@ function Landing() {
 			<div className="page">
 				<header className="landing-header">
 					<a href="#top" className="brand" aria-label="e-mun home">
-						<span className="brand-mark">e</span>e-mun
+						<img className="brand-mark" src="/favicon.png" alt="" />e-mun
 					</a>
 					<nav className="landing-nav" aria-label="main navigation">
 						<a href="#works">what we make</a>
