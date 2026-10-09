@@ -12,7 +12,7 @@ const PRODUCTS = [
     넓어야 빈 구간이 안 생겨서 12 번 반복한다. */
 const TICKER = Array.from({ length: 12 }, () => PRODUCTS).flat();
 
-function Landing() {
+export function Landing() {
 	const rootRef = useRef<HTMLDivElement>(null);
 	const [electric, setElectric] = useState(false);
 
@@ -349,9 +349,11 @@ function Landing() {
 }
 
 /**
- * 경로 분기. wrangler.json 의 not_found_handling 이 single-page-application 이라
- * 모든 경로가 index.html 로 오므로 여기서 가른다. 라우터를 넣지 않는다 —
- * 페이지가 둘뿐이고, 늘어나면 그때 react-router 를 붙인다.
+ * 경로 분기. 각 경로는 빌드 시 정적 HTML 로 프리렌더된다(scripts/prerender.mjs).
+ * /privacy 는 에셋 라우터가 privacy/index.html 로 307 리다이렉트 후 서빙하고,
+ * 그 외 미스매치는 존재하지 않는 페이지이므로 404 가 맞다(Google 은 soft-404 를
+ * 오히려 감점한다). 라우터를 넣지 않는다 — 페이지가 둘뿐이고, 늘어나면 그때
+ * react-router 를 붙인다.
  */
 function App() {
 	if (window.location.pathname.replace(/\/+$/, "") === "/privacy") {
