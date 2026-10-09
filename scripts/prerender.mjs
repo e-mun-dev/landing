@@ -53,10 +53,17 @@ for (const page of prerenderPages()) {
 	const url = page.file === "index.html" ? "https://e-mun.com/" : "https://e-mun.com/privacy/";
 	html = html.replace(
 		"</title>",
-		`</title>\n\t\t<link rel="canonical" href="${url}"`,
+		`</title>\n\t\t<link rel="canonical" href="${url}" />`,
 	);
 
 	const target = resolve(clientDir, page.file);
+	// 닫힌 태그 검증: 미완 태그는 바로 뒤의 script 를 통째로 삼켜 하이드레이션을 죽인다.
+	if (!/<link rel="canonical" href="[^"]+" \/>/.test(html)) {
+		throw new Error(`prerender: ${page.file} 의 canonical 태그가 완전하지 않다.`);
+	}
+	if (!/<script type="module"[^>]*src="\/assets\/[^"]+\.js"><\/script>/.test(html)) {
+		throw new Error(`prerender: ${page.file} 의 entry script 태그가 손상되었다.`);
+	}
 	await mkdir(dirname(target), { recursive: true });
 	await writeFile(target, html, "utf8");
 	console.log(`prerender: ${page.file} (+${(html.length / 1024).toFixed(1)}KB)`);
