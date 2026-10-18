@@ -11,7 +11,7 @@ const OPERATOR = {
 	address: "서울특별시 노원구",
 	email: "support@e-mun.com",
 	officer: "손예선",
-	effectiveDate: "2026년 9월 28일",
+	effectiveDate: "2026년 10월 18일",
 };
 
 function Privacy() {
@@ -27,7 +27,8 @@ function Privacy() {
 
 			<main className="doc-body">
 				<p className="doc-lead">
-					{OPERATOR.name}(이하 &ldquo;운영자&rdquo;)은 e-mun 및 그 하위 서비스를 제공하면서
+					{OPERATOR.name}(이하 &ldquo;운영자&rdquo;)은 e-mun 및 <a href="https://star.e-mun.com">STAR</a>를
+					포함한 하위 서비스를 제공하면서
 					이용자의 개인정보를 아래와 같이 처리합니다. 운영자는 비밀번호를 수집하지 않으며,
 					로그인은 외부 소셜 로그인 제공자를 통해서만 이루어집니다.
 				</p>
@@ -104,10 +105,17 @@ function Privacy() {
 						</tbody>
 					</table>
 
-					<h3>다. 수집하지 않는 것</h3>
+					<h3>다. Google AdSense 및 쿠키</h3>
 					<p>
-						광고 식별자와 행태정보를 수집하지 않으며, 광고를 게재하지 않습니다.
-						분석·추적을 위한 제3자 스크립트를 넣지 않습니다.
+						e-mun 및 STAR에서는 Google AdSense 광고를 게재할 수 있습니다.
+						Google 등 제3자 광고 제공업체는 쿠키를 사용하여 이용자가 이 사이트나
+						다른 사이트를 이전에 방문한 기록을 기반으로 광고를 제공할 수 있습니다.
+					</p>
+					<p>
+						이용자는 <a href="https://adssettings.google.com/">Google 광고 설정</a>에서
+						맞춤형 광고를 해제할 수 있습니다. 광고 및 쿠키에 관한 자세한 내용은{" "}
+						<a href="https://policies.google.com/technologies/ads">Google의 광고 관련 개인정보처리방침</a>을
+						참고하시기 바랍니다.
 					</p>
 				</section>
 
@@ -157,6 +165,10 @@ function Privacy() {
 					<p>
 						개인정보를 제3자에게 제공하지 않습니다. 법령에 따라 수사기관이 적법한 절차로
 						요구하는 경우에만 예외로 합니다.
+					</p>
+					<p>
+						다만 광고 제공업체의 쿠키를 통한 정보 처리는 제1항 다목의 Google AdSense 및
+						쿠키 안내와 Google 정책을 따릅니다.
 					</p>
 				</section>
 
